@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h2>Callback Execution Order</h2>
+  <button onclick="runCode()">Run Code</button>
+  <div id="output"></div>
+
+  <script>
+    function runCode() {
+      const output = document.getElementById("output");
+      output.innerHTML = "fired first<br>";
+      output.innerHTML += "fired second<br>";
+
+      //The Callback (setTimeout)
+      setTimeout(() => {
+        output.innerHTML += "fired third<br>";
+      }, 2000); //2000 is the ms. the output will be displayed after 2 seconds
+
+      output.innerHTML += "fired last<br>";
+    }
+  </script>
+</body>
+</html>
